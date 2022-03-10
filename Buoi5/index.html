@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <title>Buoi5</title>
+    <style>
+      @font-face {
+        font-family: "Source Sans Pro";
+        src: url("font/RubikBeastly-Regular.ttf") format("truetype");
+      }
+
+      .parent p:first-child {
+        color: red;
+      }
+      .parent p:last-child {
+        color: red;
+      }
+      a:hover {
+        color: salmon;
+      }
+      a:visited {
+        color: blue;
+      }
+      a:link {
+        color: red;
+      }
+      a:active {
+        color: rgb(114, 114, 41);
+      }
+      p::first-letter {
+        font-size: 30px;
+      }
+      p::first-line {
+        background-color: tomato;
+      }
+      p::after {
+        content: "hello";
+      }
+      p::before {
+        content: "begin";
+      }
+      /* tìm hiểu về auto nhé!! */
+      img {
+        width: 100%;
+        /* height: auto; */
+      }
+      html {
+        font-size: 30px;
+      }
+      .wrap {
+        font-size: 5px;
+      }
+      .em {
+        /* kích so với thằng bên ngoài gần nhất được khai báo size  */
+        background-color: rgb(25%, 5%, 10);
+        width: 10em;
+        height: 10em;
+      }
+      /* rem : có chữ r tức là root (html) */
+      .rem {
+        background-color: red;
+        width: 10rem;
+        height: 10rem;
+      }
+      #new-font {
+        font-family: "Neonderthaw", cursive;
+      }
+      h3 {
+        font-family: "Source Sans Pro";
+        font-size: 15px;
+        font-weight: 100;
+      }
+      #roboto {
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        /* font-weight: bold; */
+      }
+      span {
+        text-align: center;
+        background-color: red;
+        width: 200px;
+        height: 200px;
+      }
+      .list li {
+        display: inline-block;
+      }
+      #block {
+        width: 100px;
+        height: 100px;
+        background-color: saddlebrown;
+        /* display: ; */
+      }
+      #block2 {
+        width: 300px;
+        height: 300px;
+        background-color: yellow;
+        display: inline-block;
+      }
+      /* inline, block, inline-block */
+      /* active, visited, link , hover */
+    </style>
+  </head>
+
+  <body>
+    <p>Học pseudo css</p>
+    <!--  -->
+    <div class="parent">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
+        voluptatibus tenetur nesciunt! Animi ad, excepturi quidem, eum quisquam
+        iste sapiente consequatur a saepe illum eligendi itaque vitae voluptatem
+        et quasi.
+      </p>
+      <p>p thứ 2</p>
+      <p>p thứ 3</p>
+      <a href="https://www.google.com.vn/">link to google</a>
+      <a href="https://oblador.github.io/react-native-vector-icons/"
+        >link to facebook</a
+      >
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+        doloribus, et, ullam, cumque veritatis odio magni laborum modi possimus
+        saepe quia dicta blanditiis id a fugiat quod illo. Praesentium,
+        similique.
+      </p>
+      <img src="../Buoi3/img/girl.jpeg" alt="" />
+    </div>
+    <h1>Đơn vị đo lường hay sử dụng</h1>
+    <p>%, px, em, rem</p>
+    <div class="wrap">
+      <div class="rem"></div>
+      <div class="em"></div>
+    </div>
+    <h3>Màu sắc</h3>
+    <!-- red, rgb(114, 114, 41), #f6f6f6 -->
+    <h3>Font chữ trong css</h3>
+    <p id="new-font">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil veniam iste
+      beatae hic distinctio esse in impedit, debitis officiis, illum ipsum iusto
+      dignissimos numquam repellat quasi temporibus aliquid iure a!
+    </p>
+    <p id="roboto">Font roboto</p>
+    <span>ra giữa</span>
+    <span>ra giữa2</span>
+    <ul class="list">
+      <li>hey</li>
+      <li>123</li>
+      <li>123</li>
+      <li>123</li>
+    </ul>
+    <div id="block"></div>
+    <div id="block2"></div>
+    <!-- Sử dụng flex trong căn chỉnh layout -->
+  </body>
+</html>

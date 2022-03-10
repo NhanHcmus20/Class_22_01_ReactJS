@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box-modal {
+        background-color: gray;
+        border: 5px dashed red;
+        border-radius: 10px;
+        padding: 20px;
+        /* margin: 30px; */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* từ trái qua phải từ trên xuống dưới */
+
+    .parent {
+        width: 200px;
+        height: 300px;
+        background-color: blue;
+        margin-bottom: 10px;
+        display: flex;
+        position: relative;
+    }
+
+    .child {
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        position: absolute;
+        left: 0px;
+    }
+
+    .child2 {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        margin-left: 50px;
+    }
+
+    .parent2 {
+        width: 200px;
+        height: 300px;
+        background-color: red;
+    }
+
+    h1 {
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+</style>
+
+<body>
+    <div class="box-modal">
+        <h1>hello</h1>
+    </div>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child2"></div>
+
+    </div>
+    <div class="parent2">
+
+    </div>
+    <h1>learn position</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ex, dolorem voluptatem possimus autem inventore
+        provident impedit! Eum, reprehenderit necessitatibus.</p>
+</body>
+
+</html>

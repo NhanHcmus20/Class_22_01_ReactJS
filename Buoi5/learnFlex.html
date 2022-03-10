@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent-flex {
+        background-color: turquoise;
+        display: flex;
+        flex-direction: column;
+        /* jus: di chuyển theo chiều ngang và align-item di chuyển theo chiều dọc với điều kiện direction : row */
+        /* jus: di chuyển theo chiều doc và align-item di chuyển theo chiều ngang với điều kiện direction : column */
+        justify-content: flex-start;
+        align-items: flex-end;
+        height: 1000px;
+      }
+      .parent-flex > div {
+        background-color: tomato;
+        width: 100px;
+        height: 100px;
+        /* margin: 50px; */
+      }
+      #last {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Flex box</h1>
+    <div class="parent-flex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div id="last">5</div>
+    </div>
+  </body>
+</html>

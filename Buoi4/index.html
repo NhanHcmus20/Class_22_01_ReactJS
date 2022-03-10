@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buoi4</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #internal {
+        color: red;
+        background-color: blue;
+      }
+      p {
+        background-color: cornflowerblue;
+      }
+      .test-p {
+        color: crimson;
+      }
+      .test-c {
+        color: cyan;
+      }
+      h1 {
+        color: cyan;
+      }
+      #h1-inter {
+        color: darkmagenta;
+      }
+      .h1-class {
+        color: darkseagreen;
+      }
+
+      /* ngay sát: quan hệ cha con */
+      /* #list-h2 > h2 {
+        color: blue;
+      } */
+      /* quan hệ trong ngoài */
+      /* #list-h2 h2 {
+        color: deeppink;
+      } */
+
+      #list-h2,
+      h2 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- cơ chế hoạt động của Web -->
+    <!-- client gửi request -> server trả về response  -->
+    <!-- cách deploy trang web của mình -->
+    <!-- develop -->
+    <!-- deploy lên productions -->
+    <!-- github,freehost,(heroku) free. -->
+
+    <!-- github chỉ deploy được code HTML/CSS/JS  reactjs cũng deploy được qua github-->
+    <!-- ngrok: deploy tạm thời được mọi dự án. -->
+    <!-- CSS -->
+    <h1>Tự học deploy test 123123123</h1>
+    <p id="inline" style="color: blue; background-color: burlywood">
+      Inline style
+    </p>
+    <p id="internal">Internal style</p>
+    <p id="external" class="test-p test-c">External Style</p>
+    <!-- Ưu tiên dựa trên các tiêu chí -->
+    <!-- xa-gần: càng gần thẻ html hơn thì ưu tiên càng cao  -->
+    <!-- ghi đè:  -->
+    <!-- trỏ càng ít thì càng ưu tiên cao.  -->
+    <h1 id="h1-inter">đây là thẻ h1</h1>
+    <h1 class="h1-class">Đây là thẻ h1.1</h1>
+    <h1 class="h1-class">Đây là thẻ h1.2</h1>
+    <header>
+      <nav>
+        <div id="header-nav-menuitem">
+          <div class="div">
+            <div></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h2>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti natus
+      reiciendis beatae neque, alias impedit ut aspernatur quae facere magnam
+      non inventore nisi sequi? Commodi odit maxime cumque sapiente
+      voluptatibus?
+    </h2>
+
+    <div id="phan-cap">
+      <div id="list-h2">
+        <h2>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+          natus reiciendis beatae neque, alias impedit ut aspernatur quae facere
+          magnam non inventore nisi sequi? Commodi odit maxime cumque sapiente
+          voluptatibus?
+        </h2>
+        <div class="child-h2">
+          <h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+            facilis aspernatur, minus ipsam veritatis quisquam quam
+            exercitationem blanditiis possimus optio commodi accusantium maiores
+            eius minima sint, officia incidunt! Saepe, corrupti.
+          </h2>
+        </div>
+        <h2>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+          natus reiciendis beatae neque, alias impedit ut aspernatur quae facere
+          magnam non inventore nisi sequi? Commodi odit maxime cumque sapiente
+          voluptatibus?
+        </h2>
+        <h2>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+          natus reiciendis beatae neque, alias impedit ut aspernatur quae facere
+          magnam non inventore nisi sequi? Commodi odit maxime cumque sapiente
+          voluptatibus?
+        </h2>
+      </div>
+    </div>
+
+    <!-- đặt  tên: kí tự viết thương ngăn cách bởi dấu - -->
+    <!-- đặt rõ nghĩa theo chức năng  -->
+  </body>
+</html>

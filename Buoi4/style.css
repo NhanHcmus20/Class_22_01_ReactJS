@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#external {
+  color: gray;
+  background-color: aquamarine;
+}
+#internal {
+  color: black;
+}
+#inline {
+  color: red;
+}
