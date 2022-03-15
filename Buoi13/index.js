@@ -69,16 +69,19 @@ function chia(a, b, cb) {
   }, 4000);
 }
 
-function ketqua(a, b, h, cb) {
+function ketqua(a, b, h) {
   cong(a, b, (dataTong) => {
     nhan(dataTong, h, (dataNhan) => {
       chia(dataNhan, 2, (final) => {
-        cb(final);
+        console.log("final result", final);
       });
     });
   });
 }
 
-ketqua(10, 5, 7, (data) => {
-  console.log("final result", data);
-});
+ketqua(10, 5, 7);
+
+// (((a +b) /m *n )+ 8 ) *k
+// phép tính cộng: mất 3s
+// phép tinh nhân: mất 2s
+// phép tính chia: mất 4s
