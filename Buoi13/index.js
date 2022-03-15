@@ -79,9 +79,28 @@ function ketqua(a, b, h) {
   });
 }
 
-ketqua(10, 5, 7);
+// ketqua(10, 5, 7);
 
 // (((a +b) /m *n )+ 8 ) *k
 // phép tính cộng: mất 3s
 // phép tinh nhân: mất 2s
 // phép tính chia: mất 4s
+
+// calback hell => promise, async await
+function btnv(a, b, m, n, k, cb) {
+  cong(a, b, (resultTong) => {
+    chia(resultTong, m, (resultChia) => {
+      nhan(resultChia, n, (resultNhan) => {
+        cong(resultNhan, 8, (resultTong2) => {
+          nhan(resultTong2, k, (resultNhan2) => {
+            cb(resultNhan2);
+          });
+        });
+      });
+    });
+  });
+}
+
+btnv(12, 13, 4, 2, 8, (dataDone) => {
+  console.log("done buoi13 ", dataDone);
+});
