@@ -14,8 +14,11 @@ newH2All[0].innerHTML =
   "đây là <span style='color: red'>hello</span> giá trị mới mà tôi truyền vào";
 // newH2All[0].innerHTML = "đây là giá trị mới mà tôi truyền vào2";
 console.log(newH2All[0]);
-newH2All[0].style.color = "blue";
-newH2All[0].style.fontWeight = "bold";
+for (let index = 0; index < newH2All.length; index++) {
+  newH2All[index].style.color = "blue";
+  newH2All[index].style.fontWeight = "bold";
+}
+
 // newH2All[0].style.fontSize = "100px";
 function callClick() {
   console.log("test data");
