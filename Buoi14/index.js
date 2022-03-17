@@ -54,18 +54,40 @@ const chia = (a, b) => {
   });
 };
 
-const kq = (a, b, h) => {
-  return tong(a, b)
-    .then((resolve) => nhan(resolve, h))
-    .then((resolveNhan) => chia(resolveNhan, 3))
-    .then((result) => tong(result, 9))
-    .catch((error) => {
-      console.log(error);
-    });
+// const kq = (a, b, h) => {
+//   return tong(a, b)
+//     .then((resolve) => nhan(resolve, h))
+//     .then((resolveNhan) => chia(resolveNhan, 3))
+//     .then((result) => tong(result, 9))
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
+// kq(2, "Tung", 4)
+//   .then((result) => console.log("data cuoi", result))
+//   .finally((data) => {
+//     console.log("data finale", data);
+//   });
+
+//   async await
+// - chỉ await được function return ra 1 promise
+// - async await không handle được lỗi nên phải sử dụng try catch để handle lỗi
+
+function thuchienphepChia(params) {
+  return 5;
+}
+
+const ketqua = async (a, b, h) => {
+  try {
+    let ketquaTong = await tong(a, b);
+    let ketquaNhan = await nhan(ketquaTong, h);
+    let ketquaChia = await chia(ketquaNhan, 2);
+    console.log(ketquaChia);
+  } catch (error) {
+    console.log("err", error);
+  }
 };
 
-kq(2, "Tung", 4)
-  .then((result) => console.log("data cuoi", result))
-  .finally((data) => {
-    console.log("data finale", data);
-  });
+ketqua("test", 2, 5);
+// promise.all và promise.race
