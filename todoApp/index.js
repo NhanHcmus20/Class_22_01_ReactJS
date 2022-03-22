@@ -48,3 +48,7 @@ function deleteTask(index) {
   localStorage.setItem("Newtodo", JSON.stringify(listArray));
   showTask();
 }
+// bài tạp về nhà hoàn thiện các chức năng todo app
+// - validate ô input có kí tự mới được phép add task, click enter cũng add được task
+// - double click -> xuất hiện ô input để edit 
+// - có ô checkbox để check task đã hoàn thành hay chưa
