@@ -5,6 +5,7 @@ const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const pendingTask = document.querySelector(".pendingTask");
 const clearAll = document.querySelector(".footer button");
+let isEdit = null;
 console.log("bb test", "tải lại trang");
 // local storage
 showTask();
@@ -33,7 +34,11 @@ function showTask() {
   }
   let newTask = "";
   listArray.forEach((item, index) => {
-    newTask += `<li> ${item} <span onclick="deleteTask(${index})" class="icon"><i class="fa-solid fa-trash"></i></span>  </li>`;
+    if (index === isEdit) {
+      newTask += `<input id=${index} onchange="getValueInput(${index})" type="text" />`;
+    } else {
+      newTask += `<li ondblclick="editItem(${index})"> ${item} <span onclick="deleteTask(${index})" class="icon"><i class="fa-solid fa-trash"></i></span>  </li>`;
+    }
   });
   todoList.innerHTML = newTask;
   inputBox.value = "";
@@ -48,6 +53,17 @@ function deleteAll() {
 function deleteTask(index) {
   listArray.splice(index, 1);
   localStorage.setItem("Newtodo", JSON.stringify(listArray));
+  showTask();
+}
+function editItem(index) {
+  isEdit = index;
+  showTask();
+}
+function getValueInput(index) {
+  var x = document.getElementById(index);
+  listArray.splice(index, 1, x.value);
+  localStorage.setItem("Newtodo", JSON.stringify(listArray));
+  isEdit = null;
   showTask();
 }
 // bài tạp về nhà hoàn thiện các chức năng todo app
