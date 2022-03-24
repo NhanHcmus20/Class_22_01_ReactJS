@@ -5,6 +5,7 @@ const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const pendingTask = document.querySelector(".pendingTask");
 const clearAll = document.querySelector(".footer button");
+console.log("bb test", "tải lại trang");
 // local storage
 showTask();
 addBtn.onclick = () => {
@@ -24,6 +25,7 @@ clearAll.onclick = deleteAll;
 
 function showTask() {
   let getLocalStorage = localStorage.getItem("Newtodo");
+  console.log({ getLocalStorage });
   if (!getLocalStorage) {
     listArray = [];
   } else {
@@ -50,5 +52,5 @@ function deleteTask(index) {
 }
 // bài tạp về nhà hoàn thiện các chức năng todo app
 // - validate ô input có kí tự mới được phép add task, click enter cũng add được task
-// - double click -> xuất hiện ô input để edit 
+// - double click -> xuất hiện ô input để edit
 // - có ô checkbox để check task đã hoàn thành hay chưa
