@@ -57,10 +57,12 @@ function deleteTask(index) {
 }
 function editItem(index) {
   isEdit = index;
+
   showTask();
 }
 function getValueInput(index) {
   var x = document.getElementById(index);
+
   listArray.splice(index, 1, x.value);
   localStorage.setItem("Newtodo", JSON.stringify(listArray));
   isEdit = null;
