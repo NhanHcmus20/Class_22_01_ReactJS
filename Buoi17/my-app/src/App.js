@@ -7,9 +7,7 @@ import RandomNumber from "./RandomNumber";
 export default function App() {
   return (
     <div className="wrap">
-      <LearnStyle />
-      <Body />
-      <Button />
+      <RandomNumber />
     </div>
   );
 }

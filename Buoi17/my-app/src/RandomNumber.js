@@ -15,8 +15,14 @@ function RandomNumber() {
   const mouting = () => {
     randomFunction();
   };
-  useEffect(mouting, [correct]);
+  useEffect(mouting, []);
 
+  useEffect(() => {
+    if (numberOfGuesing > 7) {
+      alert("bạn thua rồi");
+      newGame();
+    }
+  }, [numberOfGuesing]);
   // mouting, updating
   // nêu [] => mouting gọi duy nhất 1 lần khi khởi tạo
   //  nếu [numberOfGuesing] => mouting sẽ gọi mỗi khi numberOfGuesing thay đổi
@@ -24,7 +30,6 @@ function RandomNumber() {
     console.log(Math.random());
     let random = Math.floor(Math.random() * 100 + 1);
     setRandomNumber(random);
-    setCorrect(false);
   };
 
   const onChangeValue = (event) => {
@@ -32,9 +37,12 @@ function RandomNumber() {
     console.log(event);
   };
   const guess = () => {
-    setnumberOfGuesing(numberOfGuesing + 1);
+    console.log("step 1", numberOfGuesing);
+    setnumberOfGuesing(numberOfGuesing + 1); // bất đồng bộ
     if (inputValue === randomNumber) {
       setCorrect(true);
+
+      newGame();
       alert("đoán đúng rồi");
     } else {
       if (inputValue > randomNumber) {
@@ -43,6 +51,8 @@ function RandomNumber() {
       if (inputValue < randomNumber) {
         setmessage("Số bạn đoán nhỏ quá");
       }
+      // console.log("step 2", numberOfGuesing);
+
       setCorrect(false);
     }
   };
@@ -50,11 +60,16 @@ function RandomNumber() {
   const newGame = () => {
     randomFunction();
     setInputValue(0);
+    setnumberOfGuesing(0);
+    setmessage("");
   };
   return (
     <div>
       {/* Header */}
-      <div className="jumbotron text-center">
+      <div
+        style={{ backgroundColor: correct ? "green" : "gray" }}
+        className="jumbotron text-center"
+      >
         <h1>Getting random number</h1>
         <p>
           Tôi đã chọn một số random trong khoảng 1 đến 100, bạn có thể đoán
