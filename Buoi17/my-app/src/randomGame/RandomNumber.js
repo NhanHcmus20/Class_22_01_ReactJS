@@ -1,10 +1,7 @@
-import logo from "./logo.svg";
 import { useState, useEffect } from "react";
-import "./App.css";
-import { Welcome } from "./component/Welcome";
-import NewHeader from "./component/Header";
-import Lifecycle from "./component/Lifecycle";
-function RandomNumber() {
+import Body from "./Body";
+import Header from "./Header";
+function RandomNumber(prop) {
   // Khai báo state data
   const [randomNumber, setRandomNumber] = useState(0);
   const [inputValue, setInputValue] = useState(0);
@@ -63,35 +60,27 @@ function RandomNumber() {
     setnumberOfGuesing(0);
     setmessage("");
   };
+
+  const props = {
+    randomNumberKey: randomNumber,
+    correctKey: correct,
+  };
   return (
     <div>
       {/* Header */}
-      <div
-        style={{ backgroundColor: correct ? "green" : "gray" }}
-        className="jumbotron text-center"
-      >
-        <h1>Getting random number</h1>
-        <p>
-          Tôi đã chọn một số random trong khoảng 1 đến 100, bạn có thể đoán
-          được?
-        </p>
-        <p>{randomNumber}</p>
-      </div>
-
+      {/* key={value} */}
+      {/*props: truyền dữ liệu từ cha sang con  */}
+      <Header randomNumberKey={randomNumber} correctKey={correct} />
       {/* Body */}
-      <div className="body">
-        <button onClick={newGame}>New game</button>
-        <hr />
-        <p className="font-weight-bold">
-          Số lần bạn đã đoán là: {numberOfGuesing}
-        </p>
-        <p className="font-weight-bold">Số bạn đoán là</p>
-        <input value={inputValue} type="number" onChange={onChangeValue} />
-        <button onClick={guess} className="btn-success">
-          Đoán
-        </button>
-        <p>{message}</p>
-      </div>
+      <Body
+        numberOfGuesing={numberOfGuesing}
+        inputValue={inputValue}
+        message={message}
+        newGame={newGame}
+        onChangeValue={onChangeValue}
+        guess={guess}
+      />
+      <p>{prop.data}</p>
     </div>
   );
 }
